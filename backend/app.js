@@ -27,13 +27,13 @@ if (process.env.NODE_ENV === "development") {
 //   res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
 // });
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors());
 
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
