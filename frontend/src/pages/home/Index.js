@@ -100,7 +100,7 @@ const Index = () => {
                   type={show_1 ? "text" : "password"}
                   readOnly
                   value={result_1}
-                  className="w-full bg-transparent ml-14 text-[1.2rem]"
+                  className="w-full bg-transparent ml-5 sm:ml-16 text-[0.7rem] sm:text-[1.2rem]"
                 />
               </label>
               {/* <p className=" text-[0.75rem] ml-12">{result_1}</p> */}
@@ -132,7 +132,7 @@ const Index = () => {
                   type={show_2 ? "text" : "password"}
                   readOnly
                   value={result_2}
-                  className="w-full bg-transparent ml-9 text-[1.2rem]"
+                  className="w-full bg-transparent ml-1 sm:ml-12 text-[0.7rem] sm:text-[1.2rem]"
                 />
               </label>
             </div>
