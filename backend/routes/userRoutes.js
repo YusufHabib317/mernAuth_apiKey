@@ -6,6 +6,7 @@ import {
   updateUser,
 } from "../controllers/userController.js";
 
+import bodyParser from "body-parser";
 import express from "express";
 import { protect } from "../middleware/authMiddleware.js";
 
@@ -21,5 +22,6 @@ router.route("/").post(registerUser);
 router.route("/auth").post(authUser);
 router.route("/profile").get(protect, getUser).put(protect, updateUser);
 router.route("/logout").post(logoutUser);
+router.use(bodyParser.json());
 
 export default router;
