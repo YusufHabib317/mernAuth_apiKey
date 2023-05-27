@@ -14,19 +14,18 @@ const app = express();
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
-if (process.env.NODE_ENV === "production") {
-  const __dirname = path.resolve();
+// if (process.env.NODE_ENV === "production") {
+//   const __dirname = path.resolve();
 
-  app.use(path.join(__dirname, "frontend/dist"));
-
-  app.all("*", (req, res, next) => {
-    // next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-  });
-} else {
-  // handle unhandled routes error
-  app.get("/", (req, res) => res.send("Server is ready"));
-}
+//   app.use(path.join(__dirname, "frontend/dist"));
+// } else {
+//   // handle unhandled routes error
+//   app.get("/", (req, res) => res.send("Server is ready"));
+// }
+// app.all("*", (req, res, next) => {
+//   // next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+//   res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+// });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
