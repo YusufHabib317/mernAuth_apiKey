@@ -42,5 +42,5 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use("/api/users", userRouter);
 
 // handle global error
-app.use(globalErrorHandler);
+// app.use(globalErrorHandler);
 export default app;
